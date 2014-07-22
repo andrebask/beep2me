@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <script src="css/source-sans-pro.js"></script> 
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/appframework/css/icons.css" />
+        <link rel="stylesheet" href="lib/appframework/css/af.ui.css" />
+        <link rel="stylesheet" href="lib/appframework/css/custom.css" />
+    </head>
+    <body>
+        <div id="afui" class="android light">
+            <div id="header">
+            <!-- any additional HTML you want can go here -->
+            </div>
+            <div id="content">        
+                
+                <!-- Splashcreen -->
+                <div id="splashscreen" class='ui-loader'>
+                    <img src="img/icon.png">
+                    <br><br>
+                    <span class='ui-icon ui-icon-loading spin'></span><h1 >Starting app</h1>
+                </div>
+            
+                <!-- Login Screen -->
+                <div id="login" title="Login" class="panel" selected="true"></div>
+    
+                <!-- Loading Screen -->
+                <div id="loading" title="Authentication..." class="panel"></div>
+         
+                <!-- Courses Screen -->
+                <div id="courses" title="Courses" class="panel">
+                    <ul id="courseList" class="list"></ul>
+                </div>  
+                
+            </div> 
+<!--
+            <div id="navbar">
+                <a href="#" id='2013'>2013</a>
+                <a href="#" id='2012'>2012</a>
+                <a href="#" id='2011'>2011</a>
+            </div>              
+-->
+        </div>
+        
+        <!-- Handlebars Templates -->
+        
+        <!-- Login form -->
+        <script id="login-tpl" type="text/x-handlebars-template">                    
+            <form>
+                  <input name="user" type="text" placeholder="person id">
+                  <input name="pwd" type="password" placeholder="password">
+                  <a id="button_login" onclick="app.route();" class="button login" >Login</a>
+            </form> 
+        </script>    
+        
+        <!-- Loading widget -->
+        <script id="loading-tpl" type="text/x-handlebars-template">
+            <div id="afui_mask" class="ui-loader" style="display: block;">
+                <span class="ui-icon ui-icon-loading spin"></span>
+                <h1>Loading Content...</h1>
+            </div>      
+        </script>    
+        
+        <!-- List of courses -->
+        <script id="home-tpl" type="text/x-handlebars-template">
+            {{#courseList courses}}<div style="float: right; padding-left 20px;">[{{year}}]</div>{{name}}{{/courseList}}
+        </script>   
+        
+        <!-- List of files -->
+        <script id="course-tpl" type="text/x-handlebars-template">
+            {{#fileList files}}{{name}}{{/fileList}}
+        </script>         
+
+        
+        <!-- Javascript Libraries -->
+        <script src="cordova.js"></script>    
+        <script src="lib/appframework/appframework.js"></script>
+        <script src="lib/appframework/ui/appframework.ui.js"></script>
+        <script src="lib/appframework/afinit.js"></script>
+        <script src="lib/fastclick.js"></script>
+        <script src="lib/handlebars.js"></script>
+        <script src="js/storage/ls-store.js"></script>
+        <script src="js/storage/fs-store.js"></script>
+
+        <!-- Javascript Code -->
+        <script src="js/HomeView.js"></script>
+        <script src="js/CourseView.js"></script>              
+        <script src="js/Beep2Me.js"></script>
+        <script src="js/LoadingView.js"></script>
+        <script src="js/LoginView.js"></script>
+        <script src="js/main.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="it.polimi.beep2me" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Beep2Me</name>
+    <description>
+        Be e-poli client
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        Beep2Me Team
+    </author>
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <icon src="img/icon.png" />
+    <access origin="*" subdomains="true"/>
+    <content src="index.html" />
+</widget>
